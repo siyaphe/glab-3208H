@@ -8,6 +8,11 @@ import Price from "./pages/Price";
 import Nav from "./components/Nav";
 import './style.css'
 import React from "react";
+//Import new components
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+
 
 //useParams?
 
@@ -22,7 +27,9 @@ export default function App() {
         <Route path="/" element={<Main />}/>
         <Route path="/currencies" element={<Currencies />}/>
         <Route path="/price/:symbol" element={<Price />}/>
-     
+        <Route path="/home" element={<Home />}/>
+        <Route path="/About" element={<About />}/>
+        <Route path="/Contact" element={<Contact />}/>
       </Routes>
     </div>
   );
