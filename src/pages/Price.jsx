@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom"
 
 export default function Price (props) {
   // Our api key from coinapi.io.
-  const apiKey = "DBF81D9A-99F6-4D9E-ABC5-C171E724CF1A";
+  const apiKey = process.env.REACT_APP_API_KEY;
   // Grabbing the currency symbol from the URL Params.
   const params = useParams()
   const symbol = params.symbol
@@ -27,7 +27,7 @@ export default function Price (props) {
   // useEffect to run getCoin when component mounts.
   useEffect(() => {
     getCoin();
-  });
+  },[]);
 
   // loaded function for when data is fetched.
   const loaded = () => {
@@ -44,6 +44,7 @@ export default function Price (props) {
   // Function for when data doesn't exist.
   const loading = () => {
     return <h1>Loading...</h1>;
+
   };
 
   // If coin has data, run the loaded function; otherwise, run loading.
