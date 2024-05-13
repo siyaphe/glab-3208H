@@ -10,7 +10,7 @@ export default function Meals() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${symbol}`;
+      const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
       try {
         const response = await fetch(url);
         const data = await response.json();
@@ -20,7 +20,7 @@ export default function Meals() {
       }
     };
     fetchData();
-  }, [symbol]);
+  }, [search]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
